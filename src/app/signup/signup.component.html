@@ -1,0 +1,14 @@
+<!-- signup.component.html -->
+<div>
+    <h2>Signup</h2>
+    <form (submit)="signup()">
+      <label for="username">Username:</label>
+      <input type="text" id="usrnme" name="username" [(ngModel)]="username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="pswrd" name="password" [(ngModel)]="password" required>
+  
+      <button type="submit">Signup</button>
+    </form>
+  </div>
+  
