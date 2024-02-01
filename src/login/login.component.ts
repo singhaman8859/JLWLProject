@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  constructor(private router: Router) {}
+
   username: string = '-0';
   password: string = '-0';
 
@@ -14,8 +17,7 @@ export class LoginComponent {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       const user = JSON.parse(storedUser);
-      console.log(user,"00000000000000")
-      console.log(this.username,this.password,"0000000000000000")
+      
       if (user.username === this.username && user.password === this.password) {
         alert('Login successful');
         // You can navigate to the home page or perform other actions upon successful login
@@ -26,6 +28,11 @@ export class LoginComponent {
       alert('User not found. Please signup first.');
     }
 
+  }
+
+  nevigateToSignup(){
+    alert("hiii")
+    this.router.navigate(['/signup']);
   }
 
 }
